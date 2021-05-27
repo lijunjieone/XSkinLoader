@@ -27,6 +27,7 @@ public class SkinConfig {
      * 属性值对应的类型是color
      */
     public static final String RES_TYPE_NAME_COLOR = "color";
+    public static final String RES_TYPE_NAME_DIMEN = "dimen";
 
     /**
      * 属性值对应的类型是drawable

@@ -3,6 +3,7 @@ package com.wind.me.xskinloader;
 import android.text.TextUtils;
 
 import com.wind.me.xskinloader.entity.SkinAttr;
+import com.wind.me.xskinloader.skinDeployer.LayoutHeightResDeployer;
 import com.wind.me.xskinloader.skinInterface.ISkinResDeployer;
 import com.wind.me.xskinloader.skinDeployer.ActivityStatusBarColorResDeployer;
 import com.wind.me.xskinloader.skinDeployer.BackgroundResDeployer;
@@ -28,6 +29,7 @@ public class SkinResDeployerFactory {
     public static final String TEXT_COLOR_HINT = "textColorHint";
     public static final String LIST_SELECTOR = "listSelector";
     public static final String DIVIDER = "divider";
+    public static final String LAYOUT_HEIGHT = "layout_height";
 
     public static final String ACTIVITY_STATUS_BAR_COLOR = "statusBarColor";
     public static final String PROGRESSBAR_INDETERMINATE_DRAWABLE = "indeterminateDrawable";
@@ -46,6 +48,7 @@ public class SkinResDeployerFactory {
         registerDeployer(DIVIDER, new ListViewDividerResDeployer());
         registerDeployer(ACTIVITY_STATUS_BAR_COLOR, new ActivityStatusBarColorResDeployer());
         registerDeployer(PROGRESSBAR_INDETERMINATE_DRAWABLE, new ProgressBarIndeterminateDrawableDeployer());
+        registerDeployer(LAYOUT_HEIGHT, new LayoutHeightResDeployer());
     }
 
     public static void registerDeployer(String attrName, ISkinResDeployer skinResDeployer) {

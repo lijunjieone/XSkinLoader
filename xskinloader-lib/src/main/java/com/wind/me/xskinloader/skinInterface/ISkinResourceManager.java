@@ -28,5 +28,6 @@ public interface ISkinResourceManager {
 
     Drawable getDrawableForMapmip(int attrValueRefId) throws Resources.NotFoundException;
 
+    int getDimen(@ColorRes int resId) throws Resources.NotFoundException;
     ;
 }

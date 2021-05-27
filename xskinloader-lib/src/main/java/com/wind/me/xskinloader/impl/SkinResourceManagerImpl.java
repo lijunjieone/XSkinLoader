@@ -66,6 +66,29 @@ public class SkinResourceManagerImpl implements ISkinResourceManager {
         return trueColor;
     }
 
+
+    @Override
+    public int getDimen(int resId) throws Resources.NotFoundException {
+        int originSize = mDefaultResources.getDimensionPixelSize(resId);
+        if (mSkinPluginResources == null) {
+            return originSize;
+        }
+
+        String resName = mDefaultResources.getResourceEntryName(resId);
+
+        int trueResId = mSkinPluginResources.getIdentifier(resName, SkinConfig.RES_TYPE_NAME_DIMEN, mSkinPluginPackageName);
+        int trueSize = 0;
+
+        try {
+            trueSize = mSkinPluginResources.getDimensionPixelSize(trueResId);
+        } catch (Resources.NotFoundException e) {
+            e.printStackTrace();
+            trueSize = originSize;
+        }
+
+        return trueSize;
+    }
+
     @Override
     public ColorStateList getColorStateList(int resId) throws Resources.NotFoundException {
         boolean isExtendSkin = true;
