@@ -42,8 +42,9 @@
 
     <FrameLayout
         android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_height="@dimen/skin_raw"
         android:layout_marginStart="100dp"
+        android:background="#00ff00"
         android:layout_marginTop="20dp">
 
         <ImageView
