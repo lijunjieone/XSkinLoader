@@ -23,15 +23,15 @@ public class LayoutHeightResDeployer implements ISkinResDeployer {
         if(SkinConfig.RES_TYPE_NAME_DIMEN.equals(skinAttr.attrValueTypeName) || SkinResDeployerFactory.LAYOUT_HEIGHT.equals(skinAttr.attrValueTypeName)){
 //            view.setBackgroundColor(resource.getColor(skinAttr.attrValueRefId));
             view.setBackgroundColor(Color.RED);
-            if(view instanceof FrameLayout) {
+//            if(view instanceof FrameLayout) {
                 int dimen = resource.getDimen(skinAttr.attrValueRefId);
-                LinearLayout.LayoutParams lp =new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,dimen);
+                ViewGroup.LayoutParams lp =new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,dimen);
                 if(view.getLayoutParams()!=null) {
-                    lp = (LinearLayout.LayoutParams) view.getLayoutParams();
+                    lp = (ViewGroup.LayoutParams) view.getLayoutParams();
                     lp.height = dimen;
                 }
                 view.setLayoutParams(lp);
-            }
+//            }
 
         }
     }
